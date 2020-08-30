@@ -1,0 +1,201 @@
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "com.cloudbees.jenkins.support.impl.cloudbees.TcpSlaveAgentListenerMonitor"
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: "MYNAME"
+        value: "MAKAFUI"
+  labelAtoms:
+  - name: "Test"
+  - name: "abhi.test"
+  - name: "agent"
+  - name: "ath"
+  - name: "cloudbees-java"
+  - name: "dchang"
+  - name: "default-fbelzunc"
+  - name: "default-java"
+  - name: "dind-aws-agent"
+  - name: "docker-agent-gpg"
+  - name: "fbelzunc-123456"
+  - name: "fbelzunc-cloudbees-core-agent-inheritance-yaml"
+  - name: "fbelzunc-cloudbees-core-agent-podtemplate"
+  - name: "fbelzunc-cloudbees-core-agent-yaml"
+  - name: "fbelzunc-default-jnlp"
+  - name: "fbelzunc-failure"
+  - name: "fbelzunc-maven"
+  - name: "felix-testing-cloud-123456789"
+  - name: "felix-testing-cloud-12345678910"
+  - name: "jdk12"
+  - name: "jmuro-zd189344"
+  - name: "jperez-with-secret"
+  - name: "jperezdind_label"
+  - name: "kubectl-k8s"
+  - name: "master"
+  - name: "maven-jdk11"
+  - name: "mylabel-jperez"
+  - name: "ndots"
+  - name: "pierre"
+  - name: "standard"
+  - name: "test-cloudbees-agent"
+  - name: "test-mcb"
+  - name: "testMaven"
+  - name: "zd175495"
+  - name: "zd66379"
+  - name: "zd79063"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodes:
+  - permanent:
+      launcher:
+        jnlp:
+          workDirSettings:
+            disabled: false
+            failIfWorkDirIsMissing: false
+            internalDir: "remoting"
+      name: "Test"
+      remoteFS: "/test/"
+      retentionStrategy: "always"
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm: "operationsCenter"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "core-mm-offline"
+      url: "file:/tmp/jenkins/war/WEB-INF/plugins/update-center.json"
+    - id: "cap-core-mm"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-mm/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+beekeeper:
+  enabled: true
+  securityWarnings:
+    enabledForCore: true
+    enabledForPlugins: true
+  upgrades:
+    autoDowngradePlugins: false
+    autoUpgradePlugins: false
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  artifactManager:
+    artifactManagerFactories:
+    - "jSync"
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+    - "averageChildHealthMetric"
+    - jobStatusHealthMetric:
+        countVirginJobs: false
+        failure: true
+        success: true
+        unbuilt: true
+        unstable: true
+    - "projectEnabledHealthMetric"
+  experimentalPlugins:
+    enabled: false
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "https://core.gcp.support.beescloud.com/mk-test/github-webhook/"
+  gitSCM:
+    createAccountBasedOnEmail: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "https://core.gcp.support.beescloud.com/mk-test/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  operationsCenterRootAction:
+    connectionDetails: "----- BEGIN CONNECTION DETAILS -----\nH4sIAAAAAAAAAB3KsQ7CIBAA0H+52QNqwdDuTsbJ/sD1PKsNKQSoi/HfJa4v7wNLpq3CCHJy3okh\r\
+      \nJJl7tGQN+pkd9szyOA6dH6yBA7zu7XZ4veB0vk0N9hyaPGtNo9a8Rla8CpY9pZgrLrJJpqDKu3nY\r\
+      \nS5WsQmQK/6rh+wM6OlExgQAAAA==\r\n----- END CONNECTION DETAILS -----\n"
+  pollSCM:
+    pollingThreadCount: 10
+  resourceRoot:
+    url: "https://resources.core.gcp.support.beescloud.com/mk-test/"
+  timestamperConfig:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  usageStatisticsCloudBees:
+    usageStatisticsCollected: true
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - name: "jdk-9.04-fbelzunc"
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: "jdk-9.0.4-oth-JPR"
+    - name: "Test_mcb"
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: "jdk-9.0.4-oth-JPR"
+  maven:
+    installations:
+    - name: "mvn-3.6.3-fbelzunc"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.3"
